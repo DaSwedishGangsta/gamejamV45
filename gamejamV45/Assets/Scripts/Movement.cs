@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 {
     // Movement
     [SerializeField] private float MoveSpeed = 8f;
+    [SerializeField] private float sprintspeed = 12f;
     [SerializeField] private float JumpForce = 16f;
     [SerializeField] private float MaxFallSpeed = -25f;
     [SerializeField] private float accelerationTime = 0.1f;
@@ -33,6 +34,7 @@ public class Movement : MonoBehaviour
 
     // movement state 
     private float horizontalInput;
+    private float shiftInputDown;
     private bool isGrounded;
     private bool wasGrounded;
     private float velocityXSmoothing;
@@ -195,7 +197,7 @@ public class Movement : MonoBehaviour
             rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
         }
 
-        else if (rb.linearVelocity.y > 0 && !jumpInputHeld)
+        else if (rb.linearVelocity.y > 0 && jumpInputHeld)
         {
             rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
         }
