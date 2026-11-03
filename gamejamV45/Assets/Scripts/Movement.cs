@@ -267,7 +267,6 @@ public class Movement : MonoBehaviour
         Vector2 dashDirection = facingright ? Vector2.right : Vector2.left;
          rb.linearVelocity = new Vector2(dashPower * dashDirection.x, 0f);
          // dashTrail.emitting = true;
-          
          yield return new WaitForSeconds(dashTime);
          rb.gravityScale = origionalGravity;
          isDashing = false;
