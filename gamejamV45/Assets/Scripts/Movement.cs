@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 
@@ -6,6 +7,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+
     // Movement
     [SerializeField] private float MoveSpeed = 8f;
     [SerializeField] private float sprintspeed = 12f;
@@ -13,6 +15,15 @@ public class Movement : MonoBehaviour
     [SerializeField] private float MaxFallSpeed = -25f;
     [SerializeField] private float accelerationTime = 0.1f;
     [SerializeField] private float decelerationTime = 0.1f;
+
+    // Dash
+    [SerializeField] private bool canDash = true;
+    [SerializeField] private bool isDashing;
+    [SerializeField] private float dashPower = 24f;
+    [SerializeField] private float dashTime = 0.2f;
+    [SerializeField] private float dashCooldown = 1f;
+    private int dashDirection;
+   //  [SerializeField] private TrailRenderer dashTrail;
 
     // Jumping
     [SerializeField] private float coyoteTime = 0.15f;
@@ -27,6 +38,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private float groundCheckDistance = 0.1f;
 
+
     //Components
     private Rigidbody2D rb;
     private Animator animator;
@@ -34,7 +46,7 @@ public class Movement : MonoBehaviour
 
     // movement state 
     private float horizontalInput;
-    private float shiftInputDown;
+
     private bool isGrounded;
     private bool wasGrounded;
     private float velocityXSmoothing;
@@ -45,6 +57,7 @@ public class Movement : MonoBehaviour
     private float coyoteTimeCounter;
     private float jumpbuffercounter;
     private bool isJumping;
+
 
 
 
@@ -70,15 +83,26 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (isDashing)
+        {
+            return; 
+        }
         handleInput();
         CheckGroundStatus();
         updateTimers();
         handleJumping();
-         // UpdateAnimations();
+        // UpdateAnimations();
+        shiftInputDown();
+        handleDashing();
     }
 
     private void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
+        
         applyMovement();
         applyJumpPhysics();
         ClampFallSpeed();
@@ -151,6 +175,7 @@ public class Movement : MonoBehaviour
         }
     }
 
+
     private void PerformJump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
@@ -190,6 +215,13 @@ public class Movement : MonoBehaviour
         }
 
     }
+    private void handleDashing()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab) && canDash)
+        {
+            StartCoroutine(dash());
+        }
+    }
     private void applyJumpPhysics()
     {
         if (rb.linearVelocity.y < 0)
@@ -215,8 +247,36 @@ public class Movement : MonoBehaviour
         facingright = !facingright;
         spriteRenderer.flipX = !spriteRenderer.flipX;
     }
+    private void shiftInputDown()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            MoveSpeed = sprintspeed;
+        }
+        else
+        {
+            MoveSpeed = 8;
+        }
+    }
+    private IEnumerator dash()
+     {
+         canDash = false;
+         isDashing = true;
+         float origionalGravity = rb.gravityScale;
+         rb.gravityScale = 0f;
+        Vector2 dashDirection = facingright ? Vector2.right : Vector2.left;
+         rb.linearVelocity = new Vector2(dashPower * dashDirection.x, 0f);
+         // dashTrail.emitting = true;
+          
+         yield return new WaitForSeconds(dashTime);
+         rb.gravityScale = origionalGravity;
+         isDashing = false;
+         yield return new WaitForSeconds(dashCooldown);
+         canDash = true;
 
-    /*private void OnLanding()
+     } 
+    /*
+    private void OnLanding()
     {
 
     }
