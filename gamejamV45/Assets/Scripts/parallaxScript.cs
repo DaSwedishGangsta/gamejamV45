@@ -7,7 +7,7 @@ public class parallaxScript : MonoBehaviour
     public GameObject cam;
     private float length;
     public float parallaxEffect; // speed commpared to camera
-    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,13 +17,13 @@ public class parallaxScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         float distance = cam.transform.position.x * parallaxEffect;
         float movement = cam.transform.position.x * (1 - parallaxEffect);
 
         transform.position = new Vector3(startPos + distance, transform.position.y, transform.position.z);
-            
+
         if (movement > startPos + length)
         {
             startPos += length;
