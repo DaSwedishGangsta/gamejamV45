@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410482259}
   - component: {fileID: 410482260}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,9 +349,10 @@ GameObject:
   - component: {fileID: 598446658}
   - component: {fileID: 598446657}
   - component: {fileID: 598446659}
+  - component: {fileID: 598446660}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -444,6 +445,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Bullet: {fileID: 708919551746600542, guid: 394fe9d8f2e741847bd5ad7ff61ff4e0, type: 3}
+--- !u!61 &598446660
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598446656}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &988753320
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 988753321}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Groundcheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,9 +627,9 @@ GameObject:
   - component: {fileID: 1249411544}
   - component: {fileID: 1249411543}
   - component: {fileID: 1249411542}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -656,7 +703,7 @@ Transform:
   m_GameObject: {fileID: 1249411538}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -781,7 +828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1457766132}
   - component: {fileID: 1457766133}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 'BulletPointer '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1071,7 +1118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1928184136}
   - component: {fileID: 1928184137}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RotatePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

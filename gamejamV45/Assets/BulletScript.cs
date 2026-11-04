@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class BulletScript : MonoBehaviour
 {
     private Vector3 mousePos;
+    public GameObject Enemy;
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
@@ -32,5 +33,13 @@ public class BulletScript : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
