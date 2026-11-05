@@ -14,7 +14,7 @@ public class gameManagerEnv : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() // uppdaterar timer och skapar hazard objekt baserat på spawnInterval
     {
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
