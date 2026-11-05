@@ -23,6 +23,9 @@ public class HealthHeart : MonoBehaviour
             case HeartStatus.Half:
                 heartImage.sprite = halfHeart;
                 break;
+            case HeartStatus.Full:
+                heartImage.sprite = fullHeart;
+                break;
         }
     }
 }
