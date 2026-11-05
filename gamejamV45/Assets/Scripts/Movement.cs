@@ -41,7 +41,7 @@ public class Movement : MonoBehaviour
 
     //Components
     private Rigidbody2D rb;
-    [SerializeField] private Animator animator;
+    //[SerializeField] private Animator animator;
     private SpriteRenderer spriteRenderer;
 
     // movement state 
@@ -67,7 +67,7 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+       // animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         rb.freezeRotation = true;
@@ -116,11 +116,11 @@ public class Movement : MonoBehaviour
         jumpInputHeld = Input.GetButton("Jump");
         if (horizontalInput != 0)
         {
-            animator.SetBool("isMoving", true);
+           // animator.SetBool("isMoving", true);
         }
         else
         {
-            animator.SetBool("isMoving", false);
+            //animator.SetBool("isMoving", false);
         }
         if (jumpInputDown)
         {
