@@ -41,7 +41,7 @@ public class Movement : MonoBehaviour
 
     //Components
     private Rigidbody2D rb;
-    private Animator animator;
+    [SerializeField] private Animator animator;
     private SpriteRenderer spriteRenderer;
 
     // movement state 
@@ -91,7 +91,7 @@ public class Movement : MonoBehaviour
         CheckGroundStatus();
         updateTimers();
         handleJumping();
-        // UpdateAnimations();
+       
         shiftInputDown();
         handleDashing();
     }
@@ -114,6 +114,14 @@ public class Movement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         jumpInputDown = Input.GetButtonDown("Jump");
         jumpInputHeld = Input.GetButton("Jump");
+        if (horizontalInput != 0)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
         if (jumpInputDown)
         {
             jumpbuffercounter = jumpBufferTime;
