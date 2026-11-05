@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enviroment : MonoBehaviour
 {
+    // - Rasmus Jacobsen
     private void OnCollisionEnter2D(Collision2D collision) // bestämer vad den kolliderar med 
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name);
