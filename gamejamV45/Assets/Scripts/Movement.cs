@@ -13,8 +13,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private float sprintspeed = 12f;
     [SerializeField] private float JumpForce = 16f;
     [SerializeField] private float MaxFallSpeed = -25f;
-    [SerializeField] private float accelerationTime = 0.1f;
-    [SerializeField] private float decelerationTime = 0.1f;
+    [SerializeField] private float accelerationTime = 0.15f;
+    [SerializeField] private float decelerationTime = 0.15f;
 
     // Dash
     [SerializeField] private bool canDash = true;
@@ -64,7 +64,7 @@ public class Movement : MonoBehaviour
     // animation state
     private bool facingright = true;
 
-    private void Awake()
+    private void Awake() // när spelet startar så hämtar vi komponenterna som vi behöver för att kunna röra på karaktären.
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -98,7 +98,7 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isDashing)
+        if (isDashing) // När du använder dash så kan du inte röra dig åt något annat håll
         {
             return;
         }
@@ -111,17 +111,31 @@ public class Movement : MonoBehaviour
 
     private void handleInput()
     {
+         // använder mig av unitys nya input system
         horizontalInput = Input.GetAxisRaw("Horizontal");
         jumpInputDown = Input.GetButtonDown("Jump");
         jumpInputHeld = Input.GetButton("Jump");
+        // om vi rör oss så startar animationen för "walking". 
         if (horizontalInput != 0)
         {
-            animator.SetBool("isMoving", true);
+            animator.SetBool("isWalking", true);
+
+            // om vi rör oss snabbar än hastigheten 8 så börjar karaktären animationen för att springa, om vi inte gör det så avslutas sprint animationen  
+            if (MoveSpeed > 8) 
+            {
+                animator.SetBool("isRunning", true);
+            }
+            else
+            {
+                animator.SetBool("isRunning", false);
+            }
         }
+        // om vi inte rör oss så blir "isWalking" false. 
         else
         {
-            animator.SetBool("isMoving", false);
+            animator.SetBool("isWalking", false);
         }
+        
         if (jumpInputDown)
         {
             jumpbuffercounter = jumpBufferTime;
@@ -136,7 +150,7 @@ public class Movement : MonoBehaviour
     private void CheckGroundStatus()
     {
         wasGrounded = isGrounded;
-
+        // kollar vart groundchecken befinner sig och definerar nör karkatären rör marken och när den inte gör det 
         Vector2 groundCheckPosition = (Vector2)groundCheck.position;
         isGrounded = Physics2D.OverlapCircle(groundCheckPosition, groundCheckRadius, groundLayerMask);
 
@@ -148,15 +162,15 @@ public class Movement : MonoBehaviour
                 groundCheckDistance,
                 groundLayerMask);
         }
-
-        if (isGrounded && !wasGrounded)
+        // om vi är på marken så definerar spelet att vi inte hoppar 
+        if (isGrounded && !wasGrounded) 
         {
             isJumping = false;
             // Onlanding();
         }
 
     }
-    private void updateTimers()
+    private void updateTimers() // kontrollerar timers specifict för när man hoppar 
     {
         if (isGrounded)
         {
@@ -166,29 +180,30 @@ public class Movement : MonoBehaviour
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
-    }
-    private void handleJumping()
+    } 
+    private void handleJumping()  
     {
-        bool canJump = (isGrounded || coyoteTimeCounter > 0f) && jumpbuffercounter > 0f;
+        bool canJump = (isGrounded || coyoteTimeCounter > 0f) && jumpbuffercounter > 0f; // om vi kan hoppa hoppa så måste cooldownen vara avklarad samt vara på marken 
 
-        if (canJump && !isJumping)
+        if (canJump && !isJumping) // om vi kan hoppa och inte äri processen av ett hopp.
         {
             PerformJump();
+            
         }
 
-        if (!jumpInputHeld && rb.linearVelocity.y > 0f && isJumping)
+        if (!jumpInputHeld && rb.linearVelocity.y > 0f && isJumping) // om vi inte håller in hopp och vi är påväg uppåt i hoppet så kan vi hoppa längre genom att hålla ner hopp knappen
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * variablejumpHeight);
             isJumping = false;
         }
     }
 
-
-    private void PerformJump()
+    
+    private void PerformJump() // när vi hoppar så sätter vi velocityn på karaktären till jumpforce och sätter "isJumping" till true samt nollställer coyoteTimeCounter, jumpbuffercounter.
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
 
-        isJumping = true;
+        isJumping = true; 
         coyoteTimeCounter = 0f;
         jumpbuffercounter = 0f;
 
@@ -198,16 +213,18 @@ public class Movement : MonoBehaviour
 
     private void applyMovement()
     {
+        // använder smoothtime/smoothdamp för att göra rörelsen mer flytande och inte så ryckig.
         float targetVelocityX = horizontalInput * MoveSpeed;
         float smoothTime = (horizontalInput != 0) ? accelerationTime : decelerationTime;
 
-        float newVelocityX = Mathf.SmoothDamp(
+        float newVelocityX = Mathf.SmoothDamp( 
             rb.linearVelocity.x,
             targetVelocityX,
             ref velocityXSmoothing,
             smoothTime
             );
-
+         
+         // flippar sprites beroende på vilken riktning man rör sig åt, genom att 
         rb.linearVelocity = new Vector2(newVelocityX, rb.linearVelocity.y);
         if (horizontalInput > 0 && !facingright)
         {
@@ -223,14 +240,14 @@ public class Movement : MonoBehaviour
         }
 
     }
-    private void handleDashing()
+    private void handleDashing() // om vi trycker på tab så aktiveras dashen och vi kan inte dasha igen förrän cooldownen är avklarad.
     {
         if (Input.GetKeyDown(KeyCode.Tab) && canDash)
         {
             StartCoroutine(dash());
         }
     }
-    private void applyJumpPhysics()
+    private void applyJumpPhysics() // om vi är påväg neråt så ökar vi gravitationen för att göra hoppet mer realistiskt, om vi håller in hopp knappen så kan vi hoppa högre.
     {
         if (rb.linearVelocity.y < 0)
         {
@@ -243,19 +260,19 @@ public class Movement : MonoBehaviour
         }
 
     }
-    private void ClampFallSpeed()
+    private void ClampFallSpeed() // om vi faller så sätter vi en max hastighet för hur snabbt vi kan falla.
     {
         if (rb.linearVelocity.y < MaxFallSpeed)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, MaxFallSpeed);
         }
     }
-    private void Flip()
+    private void Flip() // flippar karaktären beroende på vilken riktning man rör sig åt.
     {
         facingright = !facingright;
         spriteRenderer.flipX = !spriteRenderer.flipX;
     }
-    private void shiftInputDown()
+    private void shiftInputDown() // om vi håller in shift så ökar vi hastigheten.
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -266,7 +283,7 @@ public class Movement : MonoBehaviour
             MoveSpeed = 8;
         }
     }
-    private IEnumerator dash()
+    private IEnumerator dash() // när vi dasha så sätter vi gravitationen till 0 och sätter velocityn till dashpower i den riktning vi rör oss åt, efter dashTime så återställer vi gravitationen och sätter isDashing till false, efter dashCooldown så kan vi dasha igen.
      {
          canDash = false;
          isDashing = true;
@@ -288,7 +305,7 @@ public class Movement : MonoBehaviour
 
     }
     */
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected() // ritar en gizmo som visar vart groundchecken befinner sig och om vi är på marken eller inte.
     {
         if (groundCheck != null)
         {

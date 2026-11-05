@@ -1033,7 +1033,7 @@ MonoBehaviour:
     m_Bits: 256
   groundCheckRadius: 0.2
   groundCheckDistance: 0.1
-  animator: {fileID: 0}
+  animator: {fileID: 1249411546}
 --- !u!61 &1249411545
 BoxCollider2D:
   m_ObjectHideFlags: 0
