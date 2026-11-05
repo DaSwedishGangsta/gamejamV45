@@ -2,8 +2,10 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,13 +15,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Enemies
+  - PlayerProjectiles
+  - EnemyProjectiles
+  - Collectibles
+  - Triggers
   - 
   - 
   - 
@@ -41,3 +43,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: 1
+    uniqueID: 3104371119
+    locked: 0
+  - name: 2
+    uniqueID: 3667332491
+    locked: 0
+  - name: 3
+    uniqueID: 1692869871
+    locked: 0
+  - name: 4
+    uniqueID: 3618102961
+    locked: 0
+  - name: Player
+    uniqueID: 1088219239
+    locked: 0
+  m_RenderingLayers:
+  - Default
+  m_MigratedRenderPipelines: []

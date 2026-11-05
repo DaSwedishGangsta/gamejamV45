@@ -1,10 +1,18 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void Die()
+    public float health;
+    public float maxhealth;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        SceneManager.LoadScene("GameOverScene");
+        maxhealth = health;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
