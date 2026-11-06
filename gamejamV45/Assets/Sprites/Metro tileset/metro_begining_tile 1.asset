@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: lamp
+  m_Name: metro_begining_tile 1
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: 21300000, guid: a1af138b6be1b2148865838c23a10a9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 97de296a50435a74ba873eba77c47f59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

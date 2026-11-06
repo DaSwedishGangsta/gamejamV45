@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/sign_pole.png.meta
-guid: 88e101e586ce5214589f231cc6c0258e
+guid: 76f4d4995c3384d41938494b34f969ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4244267802870773080
-    second: sign_pole_0
-========
-guid: 7089c24ce89589e448f84a080a6be112
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -7002431475954645588
-    second: Slumtileground1_0
->>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/Slumtileground1.png.meta
+      213: -4146604775770794159
+    second: sign_pole (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -111,11 +102,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/sign_pole.png.meta
-      name: sign_pole_0
-========
-      name: Slumtileground1_0
->>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/Slumtileground1.png.meta
+      name: sign_pole (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,13 +117,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/sign_pole.png.meta
-      spriteID: 8557db1641ba6ea30800000000000000
-      internalID: 4244267802870773080
-========
-      spriteID: ca585bf4cad52de90800000000000000
-      internalID: -7002431475954645588
->>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/Slumtileground1.png.meta
+      spriteID: 1575e341dec4476c0800000000000000
+      internalID: -4146604775770794159
       vertices: []
       indices: 
       edges: []
@@ -145,7 +127,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -155,11 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/sign_pole.png.meta
-      sign_pole_0: 4244267802870773080
-========
-      Slumtileground1_0: -7002431475954645588
->>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/Slumtileground1.png.meta
+      sign_pole (1)_0: -4146604775770794159
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

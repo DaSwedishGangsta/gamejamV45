@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/broken_lamo_obstical (1).png.meta
-guid: b3aa13a13c9088144958b64086a7d4db
+guid: d1d3e39b039738142922a1a44b8e30ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3831468515970403985
-    second: broken_lamo_obstical (1)_0
-========
-guid: 341fe6a0a9fd4ff448a9a2509dbbdf95
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 7035919479594111251
-    second: slumtileground3_0
->>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/slumtileground3.png.meta
+      213: 5932510162274610286
+    second: can (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -111,23 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/broken_lamo_obstical (1).png.meta
-      name: broken_lamo_obstical (1)_0
+      name: can (1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 27
-        width: 32
-        height: 5
-========
-      name: slumtileground3_0
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 7
         y: 0
-        width: 32
-        height: 32
->>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/slumtileground3.png.meta
+        width: 16
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,13 +117,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/broken_lamo_obstical (1).png.meta
-      spriteID: 19e4286b05c1c2530800000000000000
-      internalID: 3831468515970403985
-========
-      spriteID: 31155712d7b94a160800000000000000
-      internalID: 7035919479594111251
->>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/slumtileground3.png.meta
+      spriteID: e6ce5c09f82845250800000000000000
+      internalID: 5932510162274610286
       vertices: []
       indices: 
       edges: []
@@ -151,7 +127,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,11 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/broken_lamo_obstical (1).png.meta
-      broken_lamo_obstical (1)_0: 3831468515970403985
-========
-      slumtileground3_0: 7035919479594111251
->>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/slumtileground3.png.meta
+      can (1)_0: 5932510162274610286
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

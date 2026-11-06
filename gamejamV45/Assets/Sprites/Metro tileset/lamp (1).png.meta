@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/metro_begining_tile.png.meta
-guid: d800d26647d0de64c9c85f2269f953df
+guid: 084225768c55bdc4a891701a2c976dd1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2246709836437685393
-    second: metro_begining_tile_0
-========
-guid: 13a62be3b67bd6c42b4f98b75ae4f7ee
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -9203849118773714931
-    second: Slumtileground2_0
->>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/Slumtileground2.png.meta
+      213: 573172318445835729
+    second: lamp (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -111,17 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/metro_begining_tile.png.meta
-      name: metro_begining_tile_0
-========
-      name: Slumtileground2_0
->>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/Slumtileground2.png.meta
+      name: lamp (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 27
         width: 32
-        height: 32
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,13 +117,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/metro_begining_tile.png.meta
-      spriteID: f6b71cdae4512d0e0800000000000000
-      internalID: -2246709836437685393
-========
-      spriteID: d0063359dfb554080800000000000000
-      internalID: -9203849118773714931
->>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/Slumtileground2.png.meta
+      spriteID: 1d51d04df2154f700800000000000000
+      internalID: 573172318445835729
       vertices: []
       indices: 
       edges: []
@@ -145,7 +127,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -155,11 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/metro_begining_tile.png.meta
-      metro_begining_tile_0: -2246709836437685393
-========
-      Slumtileground2_0: -9203849118773714931
->>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/Slumtileground2.png.meta
+      lamp (1)_0: 573172318445835729
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
