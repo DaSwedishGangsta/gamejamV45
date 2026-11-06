@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class gameManagerEnv : MonoBehaviour
 {
+    // - Rasmus Jacobsen
     public static gameManagerEnv Instance;
     public GameObject hazard;
     public GameObject hazardClone;
@@ -14,7 +15,7 @@ public class gameManagerEnv : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() // uppdaterar timer och skapar hazard objekt baserat på spawnInterval
     {
         timer += Time.deltaTime;
         if (timer >= spawnInterval)

@@ -8,6 +8,16 @@ public class HealthBar : MonoBehaviour
     public PlayerHealth playerHealth;
     List<HealthHeart> hearts = new List<HealthHeart>();
 
+    private void OnEnable()
+    {
+        PlayerHealth.OnPlayerDamaged += DrawHearts;
+    }
+
+    private void OnDisable()
+    {
+        PlayerHealth.OnPlayerDamaged -= DrawHearts;
+    }
+
     private void Start()
     {
         DrawHearts();

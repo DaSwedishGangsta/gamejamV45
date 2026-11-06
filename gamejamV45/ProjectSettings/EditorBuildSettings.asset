@@ -9,17 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8219a8c48a32378498efb47142848129
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/Metro Level.unity
     guid: adc20af90c003c749bf114674bda2de7
   - enabled: 1
-    path: Assets/Scenes/Level 2.unity
+    path: Assets/Scenes/Slums Level.unity
     guid: 9c7007bc91a584a478658028d5f980cd
-  - enabled: 1
-    path: Assets/Scenes/Level 3.unity
-    guid: a62a84d8d3ec9e64c8636e13f300f186
-  - enabled: 1
-    path: Assets/Scenes/Level 4.unity
-    guid: 49c1be590c698f04e839aea588444a1e
   - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: 996c5925d8513f4479494dd8e0372cb2
