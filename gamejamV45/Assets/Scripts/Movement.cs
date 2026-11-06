@@ -114,14 +114,28 @@ public class Movement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         jumpInputDown = Input.GetButtonDown("Jump");
         jumpInputHeld = Input.GetButton("Jump");
-        if (horizontalInput != 0)
+          if (horizontalInput != 0)
         {
             animator.SetBool("isMoving", true);
+            animator.SetBool("isWalking", true);
+
+            // om vi rör oss snabbar än hastigheten 8 så börjar karaktären animationen för att springa, om vi inte gör det så avslutas sprint animationen  
+            if (MoveSpeed > 8) 
+            {
+                animator.SetBool("isRunning", true);
+            }
+            else
+            {
+                animator.SetBool("isRunning", false);
+            }
         }
+        // om vi inte rör oss så blir "isWalking" false. 
         else
         {
             animator.SetBool("isMoving", false);
+            animator.SetBool("isWalking", false);
         }
+
         if (jumpInputDown)
         {
             jumpbuffercounter = jumpBufferTime;
