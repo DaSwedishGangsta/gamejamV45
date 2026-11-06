@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Slums Tileset/metro_wall_2.asset.meta
 guid: d96fb997c13ba3d439799db2e31503e7
+========
+guid: 3fd0090717c32f042a8d18dfec6027f7
+>>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/blackmarket_0.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

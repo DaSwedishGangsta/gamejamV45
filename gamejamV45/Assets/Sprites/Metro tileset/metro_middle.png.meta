@@ -1,10 +1,19 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/metro_middle.png.meta
 guid: 6b3b9d67c234ba542bbc94b84444d4c9
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -70488669054843286
     second: metro_middle_0
+========
+guid: 7089c24ce89589e448f84a080a6be112
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7002431475954645588
+    second: Slumtileground1_0
+>>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/Slumtileground1.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -102,7 +111,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/metro_middle.png.meta
       name: metro_middle_0
+========
+      name: Slumtileground1_0
+>>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/Slumtileground1.png.meta
       rect:
         serializedVersion: 2
         x: 0
@@ -117,8 +130,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/metro_middle.png.meta
       spriteID: a66cb40dde2950ff0800000000000000
       internalID: -70488669054843286
+========
+      spriteID: ca585bf4cad52de90800000000000000
+      internalID: -7002431475954645588
+>>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/Slumtileground1.png.meta
       vertices: []
       indices: 
       edges: []
@@ -127,7 +145,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -137,7 +155,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+<<<<<<<< HEAD:gamejamV45/Assets/Sprites/Metro tileset/metro_middle.png.meta
       metro_middle_0: -70488669054843286
+========
+      Slumtileground1_0: -7002431475954645588
+>>>>>>>> 83597515db73675b81b3180772a622e39d0c8c9a:gamejamV45/Assets/Sprites/Slums Tileset/Slumtileground1.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
